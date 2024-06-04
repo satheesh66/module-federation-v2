@@ -9,6 +9,7 @@ const { getConfig } = require("../webpack.config");
 let config = getConfig({
   name: "app2",
   relativePath: path.resolve(__dirname),
+  port: 3001,
 });
 
 let modFed = new ModuleFederationPlugin({
