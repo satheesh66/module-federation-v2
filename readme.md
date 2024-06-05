@@ -4,8 +4,10 @@ Both dev and prod build we facing duplicate request issue.
 
 ### Build
 
-Dev -> npm run build
+install --> node script install
 
-Prod build -> npm run build:prod
+Dev -> node script build
 
-Start -> npm run start
+Prod build -> node script build:prod
+
+Start -> node script start
