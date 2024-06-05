@@ -1,5 +1,6 @@
 const path = require("path");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
+const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 
 module.exports = {
   getConfig: ({ relativePath, name = "app1", port = 3000 }) => ({
@@ -23,7 +24,7 @@ module.exports = {
           ? {}
           : {
               context: ["/"],
-              target: "http://localhost:3000",
+              target: "http://127.0.0.1:3000",
             },
       ],
     },
@@ -35,6 +36,7 @@ module.exports = {
         inject: false,
         excludeChunks: ["app", "entry"],
       }),
+      new MiniCssExtractPlugin(),
     ],
 
     module: {
@@ -43,6 +45,10 @@ module.exports = {
           test: /\.jsx?$/,
           exclude: /node_modules/,
           use: "babel-loader",
+        },
+        {
+          test: /\.css$/,
+          use: [MiniCssExtractPlugin.loader, "css-loader"],
         },
       ],
     },
