@@ -15,7 +15,9 @@ let config = getConfig({
 let modFed = new ModuleFederationPlugin({
   name: "app2",
   filename: "entry.js",
-  remotes: {},
+  remotes: {
+    app3: "app3@http://127.0.0.1:3000/app3/mf-manifest.json",
+  },
   exposes: {
     "./button": "./src/button.jsx",
     "./label": "./src/label.jsx",
