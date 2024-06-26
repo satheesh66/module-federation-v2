@@ -1,5 +1,5 @@
 const path = require("path");
-const HtmlWebpackPlugin = require("html-webpack-plugin");
+
 const {
   ModuleFederationPlugin,
 } = require("@module-federation/enhanced/webpack");
@@ -12,6 +12,7 @@ let moduleFed = new ModuleFederationPlugin({
   filename: "entry.js",
   remotes: {
     app2: "app2@http://127.0.0.1:3000/app2/mf-manifest.json",
+    // app3: "app3@http://127.0.0.1:3000/app3/mf-manifest.json",
   },
   exposes: {
     "./button": "./src/App.jsx",

@@ -4,9 +4,8 @@ import "./button.css";
 
 export function Button() {
   return (
-    <>
-      <button className="app3button">App3 button</button>;
-      <br />
-    </>
+    <div style={{ border: "solid 1px", padding: "16px" }}>
+      <button className="app3button">App3 button</button>
+    </div>
   );
 }

@@ -1,5 +1,4 @@
 const path = require("path");
-const HtmlWebpackPlugin = require("html-webpack-plugin");
 
 const {
   ModuleFederationPlugin,
@@ -22,6 +21,10 @@ let modFed = new ModuleFederationPlugin({
     "./button": "./src/button.jsx",
     "./label": "./src/label.jsx",
   },
+  manifest: {
+    filePath: "./",
+  },
+  runtimePlugins: [path.resolve(__dirname, "../mf-runtime-plugin.js")],
 });
 
 config.plugins.push(modFed);

@@ -5,6 +5,7 @@ const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 module.exports = {
   getConfig: ({ relativePath, name = "app1", port = 3000 }) => ({
     mode: "development",
+    devtool: "source-map",
     entry: { app: path.join(relativePath, "./src/index.js") },
     output: {
       path: path.resolve(__dirname, "dist", name),
@@ -28,7 +29,6 @@ module.exports = {
             },
       ],
     },
-    devtool: "source-map",
     plugins: [
       new HtmlWebpackPlugin({
         template: "../index.html",
