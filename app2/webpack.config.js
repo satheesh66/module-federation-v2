@@ -19,7 +19,6 @@ let modFed = new ModuleFederationPlugin({
   },
   exposes: {
     "./button": "./src/button.jsx",
-    "./label": "./src/label.jsx",
   },
   manifest: {
     filePath: "./",
